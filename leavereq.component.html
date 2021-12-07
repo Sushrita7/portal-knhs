@@ -1,0 +1,191 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="mainmenu">
+        <div class="sidebar-logo" routerLink="/dashboarde" >
+          EMPLOYEE PORTAL
+          </div>
+        <ul>
+          <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+          <ul>
+            <li><a routerLink="/eprofile">View</a></li>
+            <li><a routerLink="/empedit">Edit</a></li>
+          </ul>
+          </li>
+          <li class="dropdown"><a> <i class="fa fa-sign-out" style="padding-right: 10px;"></i>Leave Request <span>&rsaquo;</span></a>
+             <ul>
+                <li><a routerLink="/leavedetails"> Leave Details</a></li>
+                <li><a routerLink="/leaverequest">Apply Leave</a></li>
+                
+              </ul>
+          </li>
+          <li class="dropdown"><a><i class="fa fa-file" style="padding-right: 10px;"></i> Pay Slip <span>&rsaquo;</span></a>
+             <ul>
+             <li><a routerLink="/payslip">Pay Slip Details</a></li>
+             <li><a routerLink="/payslippdf">Payslip Pdf</a></li>
+          </ul>
+          </li>
+          <li><a routerLink="/finalset"> <i class="fa fa-book" style="padding-right: 10px;"></i>Final Settlement</a></li>
+    
+          <!-- <li class="dropdown"><a><i class="fa fa-book" style="padding-right: 10px;"></i> Final Statement <span>&rsaquo;</span></a> -->
+      
+           <!-- </li> -->
+        </ul>
+    
+      </nav>
+      <nav >
+      <ul>
+       
+         <a routerLink="/logine" class="logout">
+           <div style="display: flex;">
+             <div style="padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+             <div> Logout</div>
+           </div>
+               
+         </a>
+    
+       
+     </ul>
+    </nav>
+
+  <div style="margin-left: 15%;margin-right: 20%;margin-top: 10%;box-shadow: 0 0 20px rgb(60, 83, 214);">
+    <br><br>
+    <div style="display: flex;justify-content: space-between;">
+    <h2 style="text-align: left; color:rgb(9, 48, 95);font-size: x-large;margin-bottom: -2%;margin-left: 15%;">Leave Request</h2>
+    <div *ngIf="check" style="margin-right: 20%;color: rgb(9, 48, 95);">
+    <i class="far fa-calendar-check fa-2x"  (click)="showLeaves()"></i>
+  </div>
+  <div *ngIf="chk" style="margin-right: 20%;color: rgb(9, 48, 95); ">
+    <h6 style="font-size: larger;" (click)="showicon()">Available Leaves : {{leave_remain}}</h6>
+  </div>
+  </div>
+    <div style="padding: 5%;color: rgb(9, 48, 95);">
+
+      <div style="display: flex;">
+        <div style="padding: 3%;">
+          Start Date :
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a Start date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="start_date" [min]="min()" >
+            <!-- ngmodel above line  name="fieldName" ngDefaultControl -->
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-hint align="start"><strong>select a start date</strong> </mat-hint>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <br>
+        </div>
+        <div style="padding: 3%;">
+          End Date :
+          <mat-form-field appearance="fill" >
+            <mat-label>Choose a End date</mat-label>
+            <input matInput [matDatepicker]="picker1" [(ngModel)]="end_date" [min]="min()" required>
+            <!-- ngmodel above line -->
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <!-- <mat-hint align="start"><strong>select a end date</strong> </mat-hint> -->
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <br>
+        </div>
+      </div>
+
+      <!-- <div style="display: flex;">
+        <div style="padding: 3%;">
+          <label>Start time : </label>
+          <input type="time" id="appt" [(ngModel)]="start_time"
+            style="height: 55px;width: 250px;background-color: #e2e2e2;border: 2px solid #cac1c1;">
+        </div>
+        <div style="padding: 3%;">
+          <label>End time : </label>
+          <input type="time" id="appt" [(ngModel)]="end_time"
+            style="height: 55px;width: 250px;background-color: #e2e2e2;border: 2px solid #cac1c1;">
+          <br>
+        </div>
+      </div> -->
+
+
+      <div style="display: flex;">
+        <div style="padding: 3%;">
+          <!-- No Hrs: <input type="number" [(ngModel)]="no_of_hrs" style="height: 55px;width: 260px;"> -->
+          Total No Hrs:
+          <mat-form-field class="example-full-width">
+            <mat-label>Total No of hrs</mat-label>
+            <input matInput [(ngModel)]="no_of_hrs">
+          </mat-form-field>
+        </div>
+        <div style="padding: 3%;margin-left: 6%;">
+          Leave Type:
+
+          <mat-form-field appearance="fill">
+            <mat-label>Leave Type *</mat-label>
+            <mat-select [(ngModel)]="leave_t">
+              <mat-option *ngFor="let chs of leave_type" [value]="chs.AWART._text">
+                {{chs.ATEXT._text}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+  
+
+      <button (click)="submit_values()"
+        style="padding-left: 40%;padding-right: 40%;margin-left: 5%;
+        background-color: teal;padding-top: 1%;padding-bottom: 1%;">Submit</button>
+      
+    </div>
+  </div>
+
+  <!-- Start Date : 
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a Start date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="start_date">  
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+<br><br>
+      End Date : 
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a End date</mat-label>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="end_date"> 
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <br><br>
+
+
+      <label>Start time:</label>
+      <input type="time" id="appt" [(ngModel)]="start_time">
+      <br><br>
+      <label>End time:</label>
+      <input type="time" id="appt"  [(ngModel)]="end_time">
+      <br><br>
+      Total No Hrs: <input type="number" [(ngModel)]="no_of_hrs">
+      <br><br>
+
+      Leave Type: 
+     
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Leave Type</mat-label>
+        <mat-select [(ngModel)]="leave_t">
+          <mat-option *ngFor="let chs of leave_type" [value]="chs.AWART._text" >
+            {{chs.ATEXT._text}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button (click)="submit_values()" >Submit</button> -->
+
+</body>
+
+</html>

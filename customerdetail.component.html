@@ -1,0 +1,122 @@
+
+
+<html>
+<body>
+    
+    <div>
+    <h1 style="margin-left: 21.5%;">Profile Details</h1>
+<div id="card">
+  
+	
+    
+    <div >
+    <div class="column">
+      <div style="margin-top: 30px;display:flex;"> 
+        <p style="margin-right: 10px;"> <b>Cust Id</b></p>
+         <p style="font-weight: lighter;padding-left: 25px;">: {{+uname}}
+        </p> 
+           </div>
+
+      <div style="margin-top: 30px;display:flex;"> 
+    <p style="margin-right: 10px;"> First Name</p>
+     <p style="font-weight: lighter;" >: {{fname}}
+    </p> 
+       </div>
+
+    <div style="margin-top: 30px;display:flex;"> 
+    <p style="margin-right: 10px;"> Last Name</p>
+     <p style="font-weight: lighter;">: {{lname}}
+    </p> 
+       </div>
+
+
+    <div style="margin-top: 30px;display:flex;"> 
+      <p style="margin-right: 10px;"> Phone</p>
+       <p  style="font-weight: lighter; padding-left: 30px;">: {{mobile}}
+      </p> 
+    </div>
+
+    
+  </div>
+  <div class="column" style="margin-left: 17%;">
+    
+    <div style="margin-top: 30px;display:flex;"> 
+      <p style="margin-right: 10px;"> City</p>
+       <p style="font-weight: lighter;padding-left: 25px;">: {{city}}
+      </p> 
+  </div>
+      
+      <div style="margin-top: 30px;display:flex;"> 
+        <p style="margin-right: 10px;"> State</p>
+         <p style="font-weight: lighter;padding-left: 20px;">: {{state}}
+        </p> 
+      </div>
+
+      <div style="margin-top: 30px;display:flex;"> 
+        <p style="margin-right: 10px;"> Pincode</p>
+         <p style="font-weight: lighter;padding-left: 1px;">: {{pincode}}
+        </p> 
+        </div>
+
+        <div style="margin-top: 30px;display:flex;"> 
+          <p style="margin-right: 10px;"> Country</p>
+           <p style="font-weight: lighter;">:  {{country}}
+          </p> 
+        </div>  
+  </div>
+  </div>
+
+</div>
+</div>
+<nav class="mainmenu">
+  <div class="sidebar-logo" routerLink="/dashboard">
+    CUSTOMER PORTAL
+    </div>
+  <ul>
+    <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+    <ul>
+      <li><a routerLink="/customerdetail">View</a></li>
+      <li><a routerLink="/customeredit">Edit</a></li>
+    </ul>
+    </li>
+    <li class="dropdown"><a> <i class="fa fa-laptop fa-2x" style="padding-right: 10px;"></i>Dashboard <span>&rsaquo;</span></a>
+       <ul>
+          <li><a routerLink="/inquiry">Inquiry data</a></li>
+          <li><a routerLink="/salesorder">Sales order data</a></li>
+          <li><a routerLink="/delivery">List of Delivery</a></li>
+        </ul>
+    </li>
+    <li class="dropdown"><a><i class="fa fa-bar-chart-o fa-2x" style="padding-right: 10px;"></i> Finanicial sheet <span>&rsaquo;</span></a>
+       <ul>
+       <li><a routerLink="/invoice">Invoice details</a></li>
+       <li><a routerLink="/getpayment">Payments and aging</a></li>
+       <li><a routerLink="/creditdebit">Credit/Debit memo</a></li>
+       <li><a routerLink="/overallsales">Overall sales data</a></li>
+       </ul>
+    </li>
+    <li><a routerLink="/masterdata"> <i class="fa fa-upload fa-2x" style="padding-right: 10px;"></i>Master Data Upload</a></li>
+
+    
+  </ul>
+
+</nav>
+<nav >
+<ul>
+ 
+   <a routerLink="/login" class="logout">
+     <div style="display: flex;">
+       <div style="margin-top: 5px; padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+       <div> Logout</div>
+     </div>
+         
+   </a>
+
+ 
+</ul>
+</nav>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,178 @@
+
+
+<html>
+    <body>
+        <div>
+            <h1 style="margin-top: -2%;">Final Settlement</h1>
+            <div id=card class="alignMe">
+                <p style="margin-top: -15%;">Employee Details</p>
+                <div style="margin-top:23%;margin-left: 5%;">
+                <label ><b>Employee Name</b></label>
+                {{ename}}
+                <br>
+                <label ><b>Employee Id</b></label>
+                {{eid}}
+                <br>
+                <label ><b>Telephone</b></label>
+                {{tel}}
+                <br>
+                <label ><b>Street</b></label>
+                {{stree}}
+                <br>
+                <label ><b>City</b></label>
+                {{city}}
+                <br>
+                <label ><b>Country</b></label>
+                {{count}}
+            </div>
+            </div>
+            <div id=card1 class="alignMe">
+                <p style="margin-top: -15%;">Company Details</p>
+                <div style="margin-top:23%;margin-left: 5%;">
+                    
+                <label ><b>Company Name</b></label>
+                {{cname}}
+                <br>
+                <label ><b>Company Code</b></label>
+                {{ccode}}
+                <br>
+                <label ><b>Department</b></label>
+                {{dept}}
+                <br>
+                <label ><b>Currency</b></label>
+                {{curr}}
+                <br>
+                <label ><b>Division</b></label>
+                {{div}}
+                <br>
+                <label ><b>Cost Center</b></label>
+                {{cost}}
+            </div>
+            </div>
+            <div id=card3>
+             <div id=card4>
+                 <div *ngIf="wdet" >
+                <p style="margin-top: -20%;">Wage Details</p>
+                <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample" 
+                style="margin-top: 25%;margin-left: 3%;">
+                    <!-- <table datatable class="row-border hover" class="content-table" id="example" style="margin-top: 15%;"> -->
+                    <thead style="background-color: rgb(5, 184, 255);border: 1px black;">
+                      <tr>
+                        <th>WageType</th>
+                        <th>Amount</th>
+                        <th>TAmount</th>
+                        <!-- <th>Job Title</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <tr *ngFor="let knhs of wdet" style="background-color: cornsilk;text-align: center;"> 
+                           <td>{{knhs.SUBTYPE._text}}</td>
+                           <td>{{app}}</td>
+                           <td>{{knhs.LOCKINDIC._text}}</td>
+                           
+                           <!-- <td>{{group.job_title}}</td> -->
+                       </tr>
+                    </tbody>
+                  </table> 
+             </div>
+             </div>
+             <div id=card5 class="alignMe">
+                <p style="margin-top: -13%;">Payment Details</p>
+                <div style="margin-top:16%;margin-left: 5%;">
+                <label ><b>Basic Pay(/month)</b></label>
+                {{bas}}
+                <br>
+                <label ><b>Additional Pay</b></label>
+                {{add}}
+                <br>
+                <label ><b>Deduction Amount</b></label>
+                {{ded}}
+                <br>
+                <label ><b>Net Pay</b></label>
+                {{npay}}
+                <br>
+                <label ><b>Gross Pay</b></label>
+                {{gpay}}
+                
+            </div>
+        </div>
+            
+            <div id=card6 class="alignMe">
+                <p style="margin-top: -10%;">Service Period</p>
+                <div style="margin-top:16%;margin-left: 5%;">
+                <label ><b>Join Date</b></label>
+                {{jdate}}
+                <br>
+                <label ><b>End Date</b></label>
+                {{edate}}
+                <br>
+                <label ><b>Working Days</b></label>
+                {{wdays}}
+                <br>
+                <label ><b>Tenure Period</b></label>
+                {{tperiod}}
+                
+                
+            </div>
+            </div>
+               
+        </div>
+
+
+        </div>
+
+    
+    <nav class="mainmenu">
+        <div class="sidebar-logo">
+          EMPLOYEE PORTAL
+          </div>
+        <ul>
+          <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+          <ul>
+            <li><a routerLink="/eprofile">View</a></li>
+            <li><a routerLink="/empedit">Edit</a></li>
+          </ul>
+          </li>
+          <li class="dropdown"><a> <i class="fa fa-sign-out" style="padding-right: 10px;"></i>Leave Request <span>&rsaquo;</span></a>
+             <ul>
+                <li><a routerLink="/leavedetails"> Leave Details</a></li>
+                <li><a routerLink="/leaverequest">Apply Leave</a></li>
+                
+              </ul>
+          </li>
+          <li class="dropdown"><a><i class="fa fa-file" style="padding-right: 10px;"></i> Pay Slip <span>&rsaquo;</span></a>
+             <ul>
+             <li><a routerLink="/payslip">Pay Slip Details</a></li>
+             <li><a routerLink="/payslippdf">Payslip Pdf</a></li>
+          </ul>
+          </li>
+          <li><a routerLink="/finalset"> <i class="fa fa-book" style="padding-right: 10px;"></i>Final Statement</a></li>
+  
+          <!-- <li class="dropdown"><a><i class="fa fa-book" style="padding-right: 10px;"></i> Final Statement <span>&rsaquo;</span></a> -->
+      
+           <!-- </li> -->
+        </ul>
+    
+      </nav>
+      <nav >
+      <ul>
+       
+         <a routerLink="/logine" class="logout">
+           <div style="display: flex;">
+             <div style="padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+             <div> Logout</div>
+           </div>
+               
+         </a>
+    
+       
+     </ul>
+    </nav>
+    
+    
+    </body>
+    
+    </html>
+    
+    
+    

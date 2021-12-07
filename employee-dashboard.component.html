@@ -1,0 +1,134 @@
+
+
+<html>
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+  <body>
+    <div style="margin-left: 18%;margin-top: 2%;">
+      
+    <div id="header">
+      <h1> Welcome to Employee Portal</h1>
+      <!-- <p  class="text"style="font-size: 17px;color:black;margin-top:2%">Vendor portal  allows organizations to connect with and manage third party suppliers of goods and services. -->
+      <!-- </p> -->
+      </div>
+    
+      
+      
+      <div class="wrapper" >
+       
+        <div class="media" style="margin-left: 7%;margin-top: 5%;">
+          <ul>
+            
+        <li>
+            <a routerLink="/eprofile">
+            <div><i class="fa fa-user" aria-hidden="true" style="font-size: 300%;"></i></div>
+            <div class="name" style="text-decoration: none;">View</div>
+  
+          </a>
+        </li>
+         
+        <li>
+          <a routerLink="/empedit">
+          <div><i class="fa fa-edit" aria-hidden="true" style="font-size: 300%;padding-left: 9px;"></i></div>
+          <div class="name" style="text-decoration: none;text-align: center;">Edit</div>
+  
+        </a>
+      </li>
+  
+         
+      <li>
+        <a routerLink="/leaverequest">
+        <div><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 300%;padding-left: 30px;"></i></div>
+        <div class="name" style="text-decoration: none;padding-right: 10px;">Leave Details</div>
+  
+      </a>
+    </li>
+  
+       
+    <li>
+      <a routerLink="/payslip">
+      <div><i class="fa fa-clone" aria-hidden="true" style="font-size: 300%;"></i></div>
+      <div class="name" style="text-decoration: none;">Pay Slip </div>
+  
+    </a>
+  </li>
+  
+  <li>
+    <a routerLink="/finalset">
+    <div><i class="fa fa-book" aria-hidden="true" style="font-size: 300%;padding-left: 30px;"></i></div>
+    <div class="name" style="text-decoration: none;">Final Statement</div>
+
+  </a>
+</li>
+ 
+  
+      
+      </ul>
+  
+        </div>
+      </div>
+    </div>
+    <nav class="mainmenu">
+      <div  routerLink="/dashboarde" class="sidebar-logo">
+        EMPLOYEE PORTAL
+        </div>
+      <ul>
+        <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+        <ul>
+          <li><a routerLink="/eprofile">View</a></li>
+          <li><a routerLink="/empedit">Edit</a></li>
+        </ul>
+        </li>
+        <li class="dropdown"><a> <i class="fa fa-sign-out" style="padding-right: 10px;"></i>Leave Data <span>&rsaquo;</span></a>
+           <ul>
+              <li><a routerLink="/leavedetails"> Leave Details</a></li>
+              <!-- <li><a routerLink="/leavetype">Leave Type</a></li> -->
+              <li><a routerLink="/leaverequest">Apply Leave</a></li>
+              
+              
+            </ul>
+        </li>
+        <li class="dropdown"><a><i class="fa fa-clone" style="padding-right: 10px;"></i> Pay Slip <span>&rsaquo;</span></a>
+           <ul>
+           <li><a routerLink="/payslip">Pay Slip Details</a></li>
+           <li><a routerLink="/payslippdf">Payslip Pdf</a></li>
+        </ul>
+        </li>
+        <li><a routerLink="/finalset"> <i class="fa fa-book" style="padding-right: 10px;"></i>Final Settlement</a></li>
+
+        <!-- <li class="dropdown"><a><i class="fa fa-book" style="padding-right: 10px;"></i> Final Statement <span>&rsaquo;</span></a> -->
+    
+         <!-- </li> -->
+      </ul>
+  
+    </nav>
+    <nav >
+    <ul>
+     
+       <a routerLink="/logine" class="logout">
+         <div style="display: flex;">
+           <div style="padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+           <div> Logout</div>
+         </div>
+             
+       </a>
+  
+     
+   </ul>
+  </nav>
+  
+  </body>
+  </html>
+  
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

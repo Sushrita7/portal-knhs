@@ -1,0 +1,139 @@
+<html>
+  <body>
+    <div style="margin-left: 30%;overflow-y: scroll;height: 100%;overflow-x: hidden;">
+    <h1 style="margin-right:10%;margin-bottom: 5%;">Leave Request</h1>
+    <div class="card1" >
+    <div class="leaverem">
+    <!-- <b style="margin-top: 10%;"> Remaining Leaves:</b> -->
+    <!-- {{rem}} -->
+    </div>   
+    <div class="row" > 
+
+    <div class="col"  style="margin-right: 35%;">
+    <p style="font-weight: bolder;">Start Date</p>
+    
+    <mat-form-field appearance="fill" style="margin-left: 70%;">
+      <mat-label>Choose a Start date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="start_date" [min]="min()" >
+      <!-- ngmodel above line  name="fieldName" ngDefaultControl -->
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <!-- <mat-hint align="start"><strong>select a start date</strong> </mat-hint> -->
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!-- <mat-form-field style="margin-left: 70%;">
+    <input  class="date" matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose a date" [(ngModel)]="startdate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker ></mat-datepicker>
+    </mat-form-field>  -->
+    </div>
+     
+    <div class="col" style="margin-top: -30px;margin-right: 35%;">
+    <p style="margin-right: 0%;font-weight: bolder;">End Date</p>
+    <mat-form-field appearance="fill" style="margin-left: 70%;">
+      <mat-label>Choose a End date</mat-label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="end_date" [min]="min()" >
+      <!-- ngmodel above line -->
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <!-- <mat-hint align="start"><strong>select a end date</strong> </mat-hint> -->
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    
+    <!-- <mat-form-field style="margin-left: 70%;">
+    <input  class="date" matInput [matDatepicker]="picker1" [min]="minDate"placeholder="Choose a date" [(ngModel)]="enddate">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1 ></mat-datepicker>
+    </mat-form-field>  -->
+    </div> 
+
+    <div class="col" style="margin-right: 32%;margin-top: -25px;">
+    <p style="font-weight: bolder;">Leave Type</p>
+    <input type="text" 
+    [(ngModel)]="leave_t"
+    style="padding: 10px;margin-left: 67%;margin-top: 20px;width: 50%;" placeholder="Leave Type" >
+    </div>
+
+    <p class="click" style="margin-top: -45px ;">
+      <b (click)="show_invoice_num()" >Click Here</b> To Select The Leave Type
+    </p>  
+    <br>
+    <br>
+
+    <button (click)="submit_values()"
+    style="padding-left: 5%;padding-right: 5%;margin-left: 40%;
+    background-color: rgb(96, 203, 245);padding-top: 1%;padding-bottom: 1%;margin-top: 4%;">Submit</button>
+</div>
+   
+<br>
+<br>
+<div *ngIf="showtable" style="margin-right: 10%;margin-top: 5%;">
+  <div *ngIf="leaveType" >
+    
+    <table datatable class="row-border hover" id="example" style="margin-top: 15%;width:50%"  >
+      <thead style="background-color: rgb(5, 184, 255);padding: 5px;margin-top: 6%;">
+        <tr style="text-align: center;">
+          <th>Leave Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let knhs of leaveType" style="background-color:#e2e2e2;text-align: center;"
+         (click)="populate_value(knhs.ATEXT._text)">
+          <td>{{knhs.ATEXT._text}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+    
+  
+  
+  <nav class="mainmenu">
+    <div class="sidebar-logo" routerLink="/dashboarde">
+      EMPLOYEE PORTAL
+      </div>
+    <ul>
+      <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+      <ul>
+        <li><a routerLink="/eprofile">View</a></li>
+        <li><a routerLink="/empedit">Edit</a></li>
+      </ul>
+      </li>
+      <li class="dropdown"><a> <i class="fa fa-sign-out" style="padding-right: 10px;"></i>Leave Request <span>&rsaquo;</span></a>
+         <ul>
+            <li><a routerLink="/leavedetails"> Leave Details</a></li>
+            <li><a routerLink="/leaverequest">Apply Leave</a></li>
+            
+          </ul>
+      </li>
+      <li class="dropdown"><a><i class="fa fa-file" style="padding-right: 10px;"></i> Pay Slip <span>&rsaquo;</span></a>
+         <ul>
+         <li><a routerLink="/payslip">Pay Slip Details</a></li>
+         <li><a routerLink="/payslippdf">Payslip Pdf</a></li>
+      </ul>
+      </li>
+      <li><a routerLink="/finalset"> <i class="fa fa-book" style="padding-right: 10px;"></i>Final Settlement</a></li>
+
+      <!-- <li class="dropdown"><a><i class="fa fa-book" style="padding-right: 10px;"></i> Final Statement <span>&rsaquo;</span></a> -->
+  
+       <!-- </li> -->
+    </ul>
+
+  </nav>
+  <nav >
+  <ul>
+   
+     <a routerLink="/logine" class="logout">
+       <div style="display: flex;">
+         <div style="padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+         <div> Logout</div>
+       </div>
+           
+     </a>
+
+   
+ </ul>
+</nav>
+
+</body>
+</html>

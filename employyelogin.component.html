@@ -1,0 +1,35 @@
+
+<body style="background:rgb(90, 202, 247);
+overflow: hidden;">
+
+<div class="column" style="height: 97vh;float: left;width: 100%;margin-right: 10%;">
+    <div class="wrapper fadeInDown" style="overflow: hidden;">
+
+      
+    <div id="formContent">
+      <div class="imgcontainer" style="cursor:grab;">
+        <img routerLink="/landing" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA7Cc44RPetyhb-PzyWunbhXbzO_6Zc1yRKg&usqp=CAU" alt="Avatar" class="avatar">
+      </div>
+      <!-- <img src="Cusotmer-Portal-Logo (1).jpg"> -->
+      <h2 class='h2' style="margin-top: 0%;cursor: grab;"> EMPLOYEE PORTAL</h2>
+      <br>
+      <br>
+      <form #f="ngForm"(ngSubmit)="getresult(f)">
+        <input type="text" id="login" class="fadeIn second" placeholder="Username" name="uname" ngModel #name="ngModel">
+        <input type="password" id="password" class="fadeIn third"  placeholder="Password" name="pwd" ngModel #pwd="ngModel">
+    <button type="submit"  class="loginn">Login</button>
+    
+
+      </form>
+  
+    </div>
+  </div>
+</div>
+
+<!-- <img src="C://Users//Sushrita//Desktop//pic_trulli.jpg" alt="Trulli" width="500" height="333"> -->
+  <!-- <img style="margin-left: 10%;" src="https://website-assets-fd.freshworks.com/attachments/cjsoiv7y1017qfyg0ftxqyb3f-group-71.svg" > -->
+  <!-- <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdnblog.webkul.com%2Fblog%2Fwp-content%2Fuploads%2F2020%2F08%2Fmanaging-vendor-portal-in-Odoo.png&imgrefurl=https%3A%2F%2Fwebkul.com%2Fblog%2Fodoo-vendor-portal-speed-up-your-purchase-order-cycle%2F&tbnid=XcEsVg2Xkf7s_M&vet=12ahUKEwiBm--a9aHyAhW1S3wKHRGRDMoQMyhCegQIARBo..i&docid=f51DUzT4oeOo1M&w=960&h=" alt="Simply Easy Learning" width="200" height="80"> -->
+  <img    style="width: 50%;height: 50%;margin-top: 10%;margin-right: 7%;"  
+  src="https://blog.capterra.com/wp-content/uploads/2019/02/HEAD-5_Unique_Onboarding_Ideas_to_Steal_for_Your_Small_Business_Hero_no_text.png">
+  
+  <a routerLink="/dashboarde"></a> 

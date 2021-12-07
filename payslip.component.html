@@ -1,0 +1,95 @@
+
+<html>
+    <body>
+        <div style="margin-left: 20%;overflow-y: scroll;height: 100%;overflow-x: hidden;">        
+            <div *ngIf="payslip" style="margin-top: auto;margin-right: 5%;" >
+            <h2 style="text-align: center;">Payslip Details</h2>
+            <table datatable class="row-border hover"  class="content-table" id="example" style="padding: 30px;">
+              <thead style="background-color:rgb(5, 184, 255)">
+                <tr>
+        
+                  <th>S No</th>
+                  <!-- <th>Subtype</th> -->
+                  <th>From</th>
+                  <th > To</th>
+                  <!-- <th>Ship to Party</th> -->
+                  <!-- <th>party to ship</th> -->
+                  <th>Paydate</th>
+                  <th >Pay Type</th>
+                  <!-- <th>Absent hours</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let knhs of payslip" style="background-color: white;text-align: center;">
+                  <td>{{+knhs.SEQUENCENUMBER._text}}</td>
+                  <!-- <td>{{knhs.FPPERIOD._text}}</td> -->
+                  <td>{{knhs.FPBEGIN._text}}</td>
+                  <td>{{knhs.FPEND._text}}</td>
+                  <!-- <td>{{knhs.INCO2._text}}</td> -->
+                  
+                  <td>{{knhs.PAYDATE._text}}</td>
+                  
+                  <td>{{knhs.PAYTYPE_TEXT._text}}</td>
+                  <!-- <td>{{knhs.ABSENCEHOURS._text}}</td> -->
+                  <!-- <td>{{knhs.PAYTYPE_TEXT._text}}</td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            
+        </div>
+        <nav class="mainmenu">
+            <div class="sidebar-logo" routerLink="/dashboarde">
+              EMPLOYEE PORTAL
+              </div>
+            <ul>
+              <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+              <ul>
+                <li><a routerLink="/eprofile">View</a></li>
+                <li><a routerLink="/empedit">Edit</a></li>
+              </ul>
+              </li>
+              <li class="dropdown"><a> <i class="fa fa-sign-out" style="padding-right: 10px;"></i>Leave Request <span>&rsaquo;</span></a>
+                 <ul>
+                    <li><a routerLink="/leavedetails"> Leave Details</a></li>
+                    <li><a routerLink="/leaverequest">Apply Leave</a></li>
+                    
+                  </ul>
+              </li>
+              <li class="dropdown"><a><i class="fa fa-file" style="padding-right: 10px;"></i> Pay Slip <span>&rsaquo;</span></a>
+                 <ul>
+                 <li><a routerLink="/payslip">Pay Slip Details</a></li>
+                 <li><a routerLink="/payslippdf">Payslip Pdf</a></li>
+              </ul>
+              </li>
+              <li><a routerLink="/finalset"> <i class="fa fa-book" style="padding-right: 10px;"></i>Final Settlement</a></li>
+      
+              <!-- <li class="dropdown"><a><i class="fa fa-book" style="padding-right: 10px;"></i> Final Statement <span>&rsaquo;</span></a> -->
+          
+               <!-- </li> -->
+            </ul>
+        
+          </nav>
+          <nav >
+          <ul>
+           
+             <a routerLink="/logine" class="logout">
+               <div style="display: flex;">
+                 <div style="padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+                 <div> Logout</div>
+               </div>
+                   
+             </a>
+        
+           
+         </ul>
+        </nav>
+        
+       
+        
+    </body>
+    
+    </html>
+    
+    
+    

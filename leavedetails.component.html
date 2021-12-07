@@ -1,0 +1,98 @@
+
+<html>
+    <body>
+        <div style="margin-left: 20%;overflow-y: scroll;height: 100%;overflow-x: hidden;">        
+            <div *ngIf="leave_det" style="margin-top: auto;margin-right: 5%;" >
+            <h2 style="text-align: center;">Leave Details</h2>
+            <table datatable class="row-border hover"  class="content-table" id="example" style="padding: 30px;">
+              <thead style="background-color:   rgb(5, 184, 255)">
+                <tr>
+        
+                  <th>Employee Number</th>
+                  <!-- <th>Subtype</th> -->
+                  <th>Valid From</th>
+                  <th > Valid Till</th>
+                  <!-- <th>Ship to Party</th> -->
+                  <!-- <th>party to ship</th> -->
+                  <th>Absent days</th>
+                  <th >Absent Type</th>
+                  <th>Absent hours</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let knhs of leave_det" style="background-color: white;text-align: center;">
+                  <td>{{+knhs.EMPLOYEENO._text}}</td>
+                  <!-- <td>{{knhs.SUBTYPE._text}}</td> -->
+                  <td>{{knhs.VALIDBEGIN._text}}</td>
+                  <td>{{knhs.VALIDEND._text}}</td>
+                  <!-- <td>{{knhs.INCO2._text}}</td> -->
+                  
+                  <td>{{+knhs.ABSENCEDAYS._text}}</td>
+                  
+                  <!-- <td>{{knhs.ABSENCETYPE._text}}</td> -->
+                  <td>{{knhs.NAMEOFABSENCETYPE._text}}</td>
+                  <td>{{+knhs.ABSENCEHOURS._text}}</td>
+                  <td><button (click)="delete(knhs)" class="btn">Delete</button></td>
+                  <!-- <button class="btn-delete" type="button" style="border-radius: 1px;margin-top: 1px;">Delete</button> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            
+        </div>
+        <nav class="mainmenu">
+            <div class="sidebar-logo" routerLink="/dashboarde">
+              EMPLOYEE PORTAL
+              </div>
+            <ul>
+              <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+              <ul>
+                <li><a routerLink="/eprofile">View</a></li>
+                <li><a routerLink="/empedit">Edit</a></li>
+              </ul>
+              </li>
+              <li class="dropdown"><a> <i class="fa fa-sign-out" style="padding-right: 10px;"></i>Leave Request <span>&rsaquo;</span></a>
+                 <ul>
+                    <li><a routerLink="/leavedetails"> Leave Details</a></li>
+                    <li><a routerLink="/leaverequest">Apply Leave</a></li>
+                    
+                  </ul>
+              </li>
+              <li class="dropdown"><a><i class="fa fa-file" style="padding-right: 10px;"></i> Pay Slip <span>&rsaquo;</span></a>
+                 <ul>
+                 <li><a routerLink="/payslip">Pay Slip Details</a></li>
+                 <li><a routerLink="/payslippdf">Payslip Pdf</a></li>
+              </ul>
+              </li>
+              <li><a routerLink="/finalset"> <i class="fa fa-book" style="padding-right: 10px;"></i>Final Settlement</a></li>
+      
+              <!-- <li class="dropdown"><a><i class="fa fa-book" style="padding-right: 10px;"></i> Final Statement <span>&rsaquo;</span></a> -->
+          
+               <!-- </li> -->
+            </ul>
+        
+          </nav>
+          <nav >
+          <ul>
+           
+             <a routerLink="/logine" class="logout">
+               <div style="display: flex;">
+                 <div style="padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+                 <div> Logout</div>
+               </div>
+                   
+             </a>
+        
+           
+         </ul>
+        </nav>
+        
+       
+        
+    </body>
+    
+    </html>
+    
+    
+    

@@ -1,0 +1,122 @@
+
+
+
+
+<html>
+    <body>
+        <div style="margin-left: 28%;overflow-y: scroll;height: 100%;overflow-x: hidden;"> 
+          <div style="margin-left: 10%; ">
+            <h1 style="margin-left:25%;margin-top: 3%;">PaySlip PDF</h1>
+            <div id="card"  style="margin-left: 9%;margin-top: 3%;">
+            <label style="margin-left:10%;">Sequence Number </label>
+            <input  type="text" [(ngModel)]="seq_num" placeholder="Sequence Number" style="margin-left: 8%;">
+            <br>
+            <!-- <label style="margin-left: 10%;">Fiscal Year </label> -->
+            <!-- <input type="text" [(ngModel)]="year" placeholder="Year" style="margin-left: 8%;"> -->
+            <div>
+            <input type="submit" (click)="get_invoice()"
+             style="margin-left: 38%;padding: 12px;font-size: 105%;border-radius: 9%;margin-top: 3%;">
+            
+            </div>
+          </div>
+          </div>       
+          <button  (click)="show_invoice_num()"
+           style="margin-left: 30%;margin-top:1%;padding: 10px;font-size: 105%;border-radius: 9%;" >
+           Click Here</button>    To find the Sequence number
+        
+        
+          
+          <div *ngIf="show_table" style="margin-right: 10%;margin-top: 5%;">
+          <div *ngIf="show_inv" >
+            <h3 style="text-align: center;">Sequence Number</h3>
+            <table datatable class="row-border hover" id="example" style="margin-top: 15%;width:30%">
+              <thead style="background-color: rgb(5, 184, 255);margin-top: 6%;">
+                <tr style="text-align: center;">
+                    <!-- style="padding-left: 15px;padding-right: 40px" -->
+                  <th>Sequence Number</th>
+                  <!-- <th>Invoice Number</th> -->
+                  <!-- <th>Fiscal year</th> -->
+                  
+                  <!-- <th> BLDAT </th> -->
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let knhs of show_inv" 
+                style="background-color:#e2e2e2;text-align: center;"
+                 (click)="populate_value(+knhs.SEQUENCENUMBER._text)">
+                  <td>{{+knhs.SEQUENCENUMBER._text}}</td>
+                  <!-- <td>{{+knhs.SEQUENCENUMBER._text}}</td> -->
+                  <!-- <td>{{knhs.BELNR._text}}</td> -->
+                  <!-- <td>{{knhs.GJAHR._text}}</td> -->
+                  
+                  <!-- <td>{{knhs.BLDAT._text}}</td> -->
+                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+          <br><br>
+        
+          <iframe id="inv" width="70%" height="100%" style="margin-left: 13%;"></iframe>
+        </div>
+        
+        <nav class="mainmenu">
+            <div class="sidebar-logo" routerLink="/dashboarde">
+              EMPLOYEE PORTAL
+              </div>
+            <ul>
+              <li class="dropdown"  ><a><i class="fa fa-users fa-2x" style="padding-right: 10px;"></i>Profile <span>&rsaquo;</span></a>
+              <ul>
+                <li><a routerLink="/eprofile">View</a></li>
+                <li><a routerLink="/empedit">Edit</a></li>
+              </ul>
+              </li>
+              <li class="dropdown"><a> <i class="fa fa-sign-out" style="padding-right: 10px;"></i>Leave Request <span>&rsaquo;</span></a>
+                 <ul>
+                    <li><a routerLink="/leavedetails"> Leave Details</a></li>
+                    <li><a routerLink="/leaverequest">Apply Leave</a></li>
+                    
+                  </ul>
+              </li>
+              <li class="dropdown"><a><i class="fa fa-file" style="padding-right: 10px;"></i> Pay Slip <span>&rsaquo;</span></a>
+                 <ul>
+                 <li><a routerLink="/payslip">Pay Slip Details</a></li>
+                 <li><a routerLink="/payslippdf">Payslip Pdf</a></li>
+              </ul>
+              </li>
+              <li><a routerLink="/finalset"> <i class="fa fa-book" style="padding-right: 10px;"></i>Final Settlement</a></li>
+      
+              <!-- <li class="dropdown"><a><i class="fa fa-book" style="padding-right: 10px;"></i> Final Statement <span>&rsaquo;</span></a> -->
+          
+               <!-- </li> -->
+            </ul>
+        
+          </nav>
+          <nav >
+          <ul>
+           
+             <a routerLink="/logine" class="logout">
+               <div style="display: flex;">
+                 <div style="padding-right: 10px;"><i class="fa fa-power-off fa-2x"></i></div>
+                 <div> Logout</div>
+               </div>
+                   
+             </a>
+        
+           
+         </ul>
+        </nav>
+        
+       
+        
+        
+    </body>
+    
+    </html>
+    
+    
+    
+  
